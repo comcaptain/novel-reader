@@ -1,9 +1,11 @@
 var fs = require('fs');
+var glob = require("glob")
 var Promise = require("bluebird");
 var express = require('express');
 var app = express();
 
-const FILE_STORAGE_PATH = "novels/"
+const PUBLIC_DIR = "public/";
+const FILE_STORAGE_PATH = PUBLIC_DIR + "novels/"
 
 app.use((req, res, next) => {
 	try {
@@ -22,8 +24,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   limit: '100mb'
 })); 
 
-app.use(express.static("public"));
-app.use('/', express.static('public/index.html'));
+app.use(express.static(PUBLIC_DIR));
+app.use('/', express.static(PUBLIC_DIR + 'index.html'));
 
 //will receive data of format below:
 // [{name:xxxx, other properties}, {name: xxxx, other properties}]
@@ -36,6 +38,12 @@ app.post("/upload", function(req, res) {
 		})
 	}));
 	Promise.all(fileSavingPromises).then(() => res.send("Uploaded!"))
+})
+
+app.get("/novelList", (req, res) => {
+	glob(FILE_STORAGE_PATH + "*.json", {}, (error, fileNames) => {
+		res.send(fileNames.map(n => n.replace(PUBLIC_DIR, "")));
+	})
 })
 
 app.listen(3000, function () {
