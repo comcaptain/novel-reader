@@ -32,9 +32,17 @@ function processUploadedFiles(fileList) {
 		reader.readAsText(file, "GB2312");
 	}));
 	Promise.all(fileReaders).then(contents => {
-		var displayStr = contents.map(parseNovel).map(j => JSON.stringify(j, null, 2))
-			.join("\n\n---------------------------------------------------------------------------------\n\n");
-		id("content").textContent = displayStr;
+		var novelFiles = contents.map(parseNovel);
+		$.ajax({
+			url: "/upload",
+			data: JSON.stringify(novelFiles),
+			contentType: "application/json; charset=utf-8",
+			method: "post",
+			success: data => {
+				alert(data);
+			}
+
+		});
 	});
 }
 
@@ -56,7 +64,7 @@ function parseNovel(novelFile) {
 		chapters[j++] = {name: chapterNames[i], content: chapterTexts[i].replace(/^[\s\n]*/m, "    ")};
 	}
 	return {
-		name: novelFile.name,
+		name: novelFile.name.replace(/\..*$/, "") ,
 		chapters: chapters
 	};
 }
