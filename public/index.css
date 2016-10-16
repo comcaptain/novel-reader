@@ -1,0 +1,22 @@
+.dragover::after {
+	content: 'Drag And Drop Your File Here';
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	opacity: 0.6;
+	background: white;
+	border: 5px dashed silver;
+	z-index: 1000;
+	display: block;
+	font-size: 30px;
+	font-family: consolas;
+	text-align: center;
+	line-height: 600px;
+}
+#content {
+	width: 1080px;
+	min-height: 800px;
+	margin: 0 auto;
+	border: 1px solid silver;
+	/* use `height: 1px` to make chilren's percentage height recognize this div's min-height */
+	height: 1px;
+}
