@@ -19,4 +19,5 @@
 	border: 1px solid silver;
 	/* use `height: 1px` to make chilren's percentage height recognize this div's min-height */
 	height: 1px;
+	white-space: pre;
 }
