@@ -16,8 +16,33 @@
 	width: 1080px;
 	min-height: 800px;
 	margin: 0 auto;
-	border: 1px solid silver;
 	/* use `height: 1px` to make chilren's percentage height recognize this div's min-height */
 	height: 1px;
 	white-space: pre;
+}
+
+.novel {
+	display: inline-block;
+	height: 178px;
+	line-height: 60px;
+	width: 122px;
+	padding: 6px 14px;
+	margin: 8px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	transition: box-shadow .25s;
+	border-radius: 2px;
+	position: relative;
+	text-decoration: none;
+	font-family: "Microsoft Yahei";
+	text-align: center;
+}
+
+.novel:hover {
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	color: black;
+}
+
+.novel:visited, .novel:active {
+	color: black;
 }
