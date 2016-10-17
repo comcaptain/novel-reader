@@ -9,6 +9,7 @@ function renderIndex(data) {
 		a.classList.add("novel");
 		a.href = "novel?path=" + dataUrl;
 		a.textContent = novelName;
+		a.setAttribute("title", novelName);
 		return a;
 	}).forEach(a => {
 		id("content").appendChild(a);

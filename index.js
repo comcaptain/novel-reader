@@ -33,7 +33,7 @@ app.use('/novel', express.static(PUBLIC_DIR + 'novel.html'));
 app.post("/upload", function(req, res) {
 	var files = req.body;
 	var fileSavingPromises = files.map(file => new Promise((resolve, reject) => {
-		fs.writeFile(FILE_STORAGE_PATH + ".json", JSON.stringify(file), err => {
+		fs.writeFile(FILE_STORAGE_PATH + file.name + ".json", JSON.stringify(file), err => {
 			if (err) reject(err);
 			else resolve();
 		})

@@ -40,6 +40,7 @@ function processUploadedFiles(fileList) {
 			method: "post",
 			success: data => {
 				alert(data);
+				window.location.reload();
 			}
 
 		});
