@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 app.use(express.static(PUBLIC_DIR));
 app.use('/', express.static(PUBLIC_DIR + 'index.html'));
+app.use('/novel', express.static(PUBLIC_DIR + 'novel.html'));
 
 //will receive data of format below:
 // [{name:xxxx, other properties}, {name: xxxx, other properties}]

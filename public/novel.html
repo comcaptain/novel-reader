@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Novel</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="sgq.js"></script>
+	<script type="text/javascript" src="novel.js"></script>
+	<link rel="stylesheet" type="text/css" href="novel.css">
+</head>
+<body>
+<template id="chapter-template">
+	<div class="chapter">
+		<div class="header">
+			<h3 class="chapter-title"></h3>
+			<div class="chapter-info"></div>
+		</div>
+		<div class="body"></div>
+	</div>	
+</template>
+<div id="content">
+</div>
+<div id="category">
+	<button id="menuButton">目录</button>
+	<div id="category-dialog">
+		<ul id="category-items">
+		</ul>
+	</div>
+</div>
+</body>
+</html>
