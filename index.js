@@ -47,6 +47,6 @@ app.get("/novelList", (req, res) => {
 	})
 })
 
-app.listen(3000, function () {
+app.listen(2000, function () {
   console.log('Novel reader started!');
 });
