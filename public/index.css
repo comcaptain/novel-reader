@@ -11,6 +11,8 @@
 	font-family: consolas;
 	text-align: center;
 	line-height: 600px;
+	position: absolute;
+	top: 0;
 }
 #content {
 	width: 997px;
@@ -18,6 +20,7 @@
 	margin: 0 auto;
 	/* use `height: 1px` to make chilren's percentage height recognize this div's min-height */
 	height: 1px;
+	position: relative;
 }
 
 .novel {
