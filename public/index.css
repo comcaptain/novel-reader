@@ -13,12 +13,11 @@
 	line-height: 600px;
 }
 #content {
-	width: 1080px;
+	width: 997px;
 	min-height: 800px;
 	margin: 0 auto;
 	/* use `height: 1px` to make chilren's percentage height recognize this div's min-height */
 	height: 1px;
-	white-space: pre;
 }
 
 .novel {
