@@ -50,7 +50,7 @@ function processUploadedFiles(fileList) {
 	});
 }
 
-const CHAPTER_REGEX = /第[一二三四五六七八九零十百千万0-9]+章[^\n]*/g;
+const CHAPTER_REGEX = /第[一二三四五六七八九零十百千万0-9０１２３４５６７８９]+章[^\n]*/g;
 /**
  * @param novelFile: {name: "novel name", content: "novel content"}
  *
