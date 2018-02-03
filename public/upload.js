@@ -47,7 +47,7 @@ function processUploadedFiles(fileList) {
 	});
 }
 
-const CHAPTER_REGEX = /[第（]?[一二三四五六七八九零十百千万0-9]+[）章][^\n]*/g;
+const CHAPTER_REGEX = /第[一二三四五六七八九零十百千万0-9]+章[^\n]*/g;
 /**
  * @param novelFile: {name: "novel name", content: "novel content"}
  *
@@ -61,7 +61,6 @@ function parseNovel(novelFile) {
 	chapterTexts.splice(0, 1);
 	var chapters = [];
 	for (var i = 0, j = 0; i < chapterNames.length; i++) {
-		if (chapterTexts[i] == undefined || chapterTexts[i].length < 300) continue;
 		chapters[j++] = {name: chapterNames[i], content: chapterTexts[i].replace(/^[\s\n]*/m, "    ")};
 	}
 	return {
