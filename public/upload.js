@@ -64,7 +64,8 @@ function parseNovel(novelFile) {
 	chapterTexts.splice(0, 1);
 	var chapters = [];
 	for (var i = 0, j = 0; i < chapterNames.length; i++) {
-		chapters[j++] = {name: chapterNames[i], content: chapterTexts[i].replace(/^[\s\n]*/m, "    ")};
+		chapters[j++] = {name: chapterNames[i], content: chapterTexts[i]
+			.replace(/^[\s\n]*/m, "    ").replace(/^\s*$\n/gm, "")};
 	}
 	return {
 		name: novelFile.name.replace(/\..*$/, "") ,
